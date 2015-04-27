@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Kontactly",
+  "description": "So cool!",
+  "version": "1.0",
+    "manifest_version": 2,
+
+  "page_action": {
+    "default_icon": "images/kontactly.png",
+    "default_title": "Kontactly",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "activeTab",
+      "declarativeContent",
+      "storage",
+    "https://ajax.googleapis.com/"
+  ],
+  "background": {
+    "scripts": [
+        "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": [
+        "js/pageAction.js"
+      ],
+      "css": [
+        "css/pageAction.css"
+      ]
+    }
+  ]
+}
